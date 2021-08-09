@@ -55,5 +55,5 @@ todo.post('/newtodo', async(req, res) => {
 })
 
 var listen = todo.listen((3000 || settings[0]), () => {
-    console.log(chalk.blue(`Server started at ${chalk.yellow('{port}')} ${chalk.bold(chalk.yellow('port'))}`).replace('{port}', listen.address().port));
+    console.log(chalk.blue(`Server started on ${chalk.yellow('{port}')} ${chalk.bold(chalk.yellow('port'))}`).replace('{port}', listen.address().port));
 })

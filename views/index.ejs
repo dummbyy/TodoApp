@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title%></title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="wrapper">
+    <h1><%= title%></h1>
+    <ul class="item-list">
+        <%if((datas.length) <= 0){%>
+            <h5>No data found</h5>
+        <%}
+        else{%>
+            <h5>Total: <%= datas.length%></h5>
+        <%}%>
+        
+        <%if (locals.message) {%>
+            <span style="color:green;"><strong><%=  message.success%></strong></span>
+            <span style="color:green;"><strong><%=  message.deleted%></strong></span>
+            <span style="color:red;"><strong><%=  message.error%></strong></span>  
+        <%}%>
+
+        <%for (let data of datas){%>
+            <span style="color:#ff0066;float:right;padding:7px;margin:auto;"><%= data?.date%></span>
+            <li>
+                <h4>I will <strong><%= data?.title%></strong> <%= data?.type%></h4>
+                <p><%= data?.todo%> </p>
+                <form method="POST" action="/delete/<%= data?.title%>">
+                    <button style="position: relative; left: -45.7%;">Delete</button>
+                </form>
+            </li>
+        <%}%>
+    </ul>
+  </div>
+  <footer>
+    <form method="POST" action="/newtodo" new-item-form">
+      <div class="field">
+        <label>Type:</label>
+        <select id="type" name="type">
+          <option value="today">Today</option>
+          <option value="tomorrow">Tomorrow</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Title:</label>
+        <input type="text" name="title" placeholder="Brushing teeth">
+      </div>
+      <div class="field">
+        <label>Todo:</label>
+        <input type="text" name="todo" id="todoName" placeholder="I'm going to brush my teeth today.">
+      </div>
+      <button>Add</button>
+    </form>
+    <a href="https://github.com/sjuhyeon">GitHub</a>
+  </footer>
+  <script>
+    /* 
+    ***** Not need *****
+    function checkIfEmpty(value){
+        return !value.trim().length;
+    }
+    */
+  </script>
+</body>
+</html>

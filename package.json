@@ -1,13 +1,13 @@
 {
   "name": "todo-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "TodoApp built with express and lowdb",
   "main": "todo.js",
   "scripts": {
     "devStart": "nodemon ."
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ['todo', 'todo-app', 'lowdb', 'express.js','express','database', 'todo app'],
+  "author": "sjuhyeon",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",

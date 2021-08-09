@@ -6,7 +6,7 @@
   "scripts": {
     "devStart": "nodemon ."
   },
-  "keywords": ['todo', 'todo-app', 'lowdb', 'express.js','express','database', 'todo app'],
+  "keywords": ["todo", "todo-app", "lowdb", "express.js","express","database", "todo app"],
   "author": "sjuhyeon",
   "license": "ISC",
   "dependencies": {
